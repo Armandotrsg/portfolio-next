@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import headerImg from "../assets/img/header-img.svg"
 
 export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
   const [loopNum, setLoopNum] = useState(0);
@@ -84,9 +85,7 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
           </Col>
           <Col xs={12} md={5} xl={4}>
             <Image
-              src={
-                "https://raw.githubusercontent.com/judygab/web-dev-projects/main/personal-portfolio/src/assets/img/header-img.svg"
-              }
+              src={headerImg}
               width={500}
               height={500}
               alt="banner"

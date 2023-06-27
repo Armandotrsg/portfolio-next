@@ -38,7 +38,7 @@ export const NavBar = () => {
     <Navbar
       expand="lg"
       collapseOnSelect={true}
-      className={scrolled || window.innerWidth < 767 ? "scrolled" : ""}
+      className={scrolled  ? "scrolled" : ""}
     >
       <Container>
         <NavbarBrand as={Link} href="/">

@@ -1,16 +1,16 @@
+"use client";
 import { Col, Container, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import colorSharp from "../assets/img/color-sharp.png"
-import { SkillsContent } from "../shared/Skills";
 import Image from "next/image";
 
-interface SkillCardProps {
+export interface SkillCardProps {
     img: string;
     title: string;
 }
 
-export const Skills = () => {
+export const Skills = ({skills}: {skills: SkillCardProps[]}) => {
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -49,7 +49,7 @@ export const Skills = () => {
                             <h1>Skills</h1>
                             <p>I have worked with all of these technologies and frameworks <br />and I keep learning outside the university taking different courses that teach me new technologies</p>
                             <Carousel responsive={responsive} infinite={true} className="skill-slider">
-                                {SkillsContent.map((item, index) => {
+                                {skills.map((item, index) => {
                                     return(
                                         <SkillsCard key={index} {...item} />
                                     )
