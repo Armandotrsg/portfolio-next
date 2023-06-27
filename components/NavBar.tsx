@@ -6,6 +6,7 @@ import { SocialNav } from "./SocialNav";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
+import { resume } from "@/utils/Resume";
 
 export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +26,11 @@ export const NavBar = () => {
   }, []);
 
   const downloadResume = () => {
-    console.log("download resume");
+    let link = document.createElement("a");
+    link.href = resume;
+    link.download = "Armando_Terrazas_Resume.pdf";
+    link.click();
+    link.remove();
   };
 
   const navLinks = [
@@ -38,7 +43,7 @@ export const NavBar = () => {
     <Navbar
       expand="lg"
       collapseOnSelect={true}
-      className={scrolled  ? "scrolled" : ""}
+      className={scrolled ? "scrolled" : ""}
     >
       <Container>
         <NavbarBrand as={Link} href="/">
