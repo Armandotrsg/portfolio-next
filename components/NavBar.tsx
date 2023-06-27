@@ -36,7 +36,7 @@ export const NavBar = () => {
 
   const navLinks = [
     { id: "home", href: "/", text: "Home" },
-    { id: "aboutme", href: "/aboutme", text: "About Me" },
+    { id: "aboutme", href: "/about-me", text: "About Me" },
     { id: "connect", href: "/connect", text: "Connect" },
   ];
 
