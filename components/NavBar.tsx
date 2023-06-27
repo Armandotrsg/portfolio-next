@@ -28,6 +28,7 @@ export const NavBar = () => {
   const downloadResume = () => {
     let link = document.createElement("a");
     link.href = resume;
+    link.target = "_blank";
     link.download = "Armando_Terrazas_Resume.pdf";
     link.click();
     link.remove();

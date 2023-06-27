@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero"
 import { ApiRoute } from "@/utils/ApiRoute";
 import { Skills, SkillCardProps } from "@/components/Skills";
+import { Education } from "@/components/Education";
 
 async function getSkills() {
   const res = await fetch(`${ApiRoute()}/api/skills`);
@@ -19,6 +20,7 @@ export default async function Home() {
     <>
       <Hero greetingMessage={greetingMessages[randomIndex]}/>
       <Skills skills={skills as SkillCardProps[]}/>
+      <Education />
     </>
   )
 }
