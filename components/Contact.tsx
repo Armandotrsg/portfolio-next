@@ -38,7 +38,6 @@ export const Contact = () => {
         .then((result) => {
             console.log(result.text);
             setStatus({success: true, message: "Message sent successfully!"});
-            e.currentTarget.reset();
         }, (error) => {
             console.log(error.text);
             setStatus({success: false, message: "Message failed to send!"});
