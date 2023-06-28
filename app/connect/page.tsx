@@ -17,7 +17,15 @@ async function getProfiles() {
 }
 
 export default async function ConnectPage() {
-    const profilesData = await getProfiles() as ProfileProps[];
+    // const profilesData = await getProfiles() as ProfileProps[];
+    const profilesData: ProfileProps[] = [
+      {
+        name: "Email",
+        user: "mandotrs@icloud.com",
+        img: "https://firebasestorage.googleapis.com/v0/b/portfolio-f6166.appspot.com/o/profiles%2Fmail.png?alt=media&token=5edbcd1a-8e11-4c62-8357-b089f62eaee5",
+        link: "mailto:mandotrs@icloud.com"
+      }
+    ]
     return (
         <Connect profiles={profilesData} />
     )
