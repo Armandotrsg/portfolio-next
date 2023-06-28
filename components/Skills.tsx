@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export interface SkillCardProps {
     img: string;
-    title: string;
+    name: string;
 }
 
 export const Skills = ({skills}: {skills: SkillCardProps[]}) => {
@@ -31,11 +31,11 @@ export const Skills = ({skills}: {skills: SkillCardProps[]}) => {
         }
     };
 
-    const SkillsCard = ({img, title}: SkillCardProps) => {
+    const SkillsCard = ({img, name}: SkillCardProps) => {
         return(
             <div className="item">
-                <Image src={img} alt={title} width={300} height={300} />
-                <h5>{title}</h5>
+                <Image src={img} alt={name} width={300} height={300} />
+                <h5>{name}</h5>
             </div>
         )
     }
