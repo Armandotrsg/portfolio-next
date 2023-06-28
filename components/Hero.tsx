@@ -66,7 +66,7 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
             <span className="tagline">Hi There!</span>
             <div className="fixed-height">
               <h1>
-                I'm Armando a{" "}
+                I&apos;m Armando a{" "}
                 <span className="txt-rotate">
                   <span className={isDeleting ? "writing" : "wrap"}>
                     {text}
@@ -80,7 +80,7 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
               className="vvd"
               onClick={() => redirect("/connect")}
             >
-              Let's connect <ArrowRightCircle size={25} />{" "}
+              Let&apos;s connect <ArrowRightCircle size={25} />{" "}
             </button>
           </Col>
           <Col xs={12} md={5} xl={4}>

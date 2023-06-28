@@ -41,7 +41,7 @@ export const AboutMe = ({ image, text }: AboutMeProps) => {
                 className="vvd"
                 onClick={() => redirect("/connect")}
               >
-                Let's connect <ArrowRightCircle size={25} />{" "}
+                Let&apos;s connect <ArrowRightCircle size={25} />{" "}
               </button>
             </Col>
           </Row>
