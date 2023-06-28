@@ -28,7 +28,6 @@ export default async function Home() {
   const socialServiceData = getProjects("social-service");
   const awardsData = getProjects("awards");
   const [skills, projects, socialService, awards] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData]);
-  console.log(projects)
   return (
     <>
       <Hero greetingMessage={greetingMessages[randomIndex]}/>
