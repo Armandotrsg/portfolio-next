@@ -15,11 +15,14 @@ export interface ProjectProps {
   dates: Dates;
 }
 
-export async function GET(_: Request,{
-  params,
-}: {
-  params: { projects: "projects" | "social-service" | "awards" };
-}) {
+export async function GET(
+  _: Request,
+  {
+    params,
+  }: {
+    params: { projects: "projects" | "social-service" | "awards" };
+  }
+) {
   const path = params.projects;
   const querySnapshot = await getDocs(collection(db, path));
   const projects: ProjectProps[] = [];
@@ -36,6 +39,21 @@ export async function GET(_: Request,{
       },
     };
     projects.push(project);
+  });
+  projects.sort((a, b) => {
+    // Sort by dates.end first
+    if (a.dates.end === "undefined" && b.dates.end !== "undefined") {
+      return -1; // a comes first
+    } else if (a.dates.end !== "undefined" && b.dates.end === "undefined") {
+      return 1; // b comes first
+    }
+
+    // Convert dates.start strings to Date objects
+    const dateA = new Date(Date.parse(a.dates.start));
+    const dateB = new Date(Date.parse(b.dates.start));
+
+    // Sort by dates.start in descending order
+    return dateB.getTime() - dateA.getTime();
   });
   return NextResponse.json(projects);
 }
