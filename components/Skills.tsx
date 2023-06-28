@@ -59,7 +59,7 @@ export const Skills = ({skills}: {skills: SkillCardProps[]}) => {
                     </Col>
                 </Row>
             </Container>
-            <Image className="background-image-left" src={colorSharp} alt="background" width={300} />
+            <Image className="background-image-left" src={colorSharp} alt="background" width={300} height={300} placeholder="blur" />
         </section>
     );
 }

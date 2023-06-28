@@ -66,6 +66,7 @@ export const Connect = ({ profiles }: { profiles: ProfileProps[] }) => {
             className="background-image-right"
             width={500}
             height={500}
+            placeholder="blur"
           />
         </Container>
       </section>
