@@ -21,7 +21,6 @@ export async function GET(_: Request,{
   params: { projects: "projects" | "social-service" | "awards" };
 }) {
   const path = params.projects;
-  console.log(path)
   const querySnapshot = await getDocs(collection(db, path));
   const projects: ProjectProps[] = [];
   querySnapshot.forEach((doc) => {
@@ -38,6 +37,5 @@ export async function GET(_: Request,{
     };
     projects.push(project);
   });
-  console.log(projects)
   return NextResponse.json(projects);
 }
