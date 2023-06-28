@@ -31,10 +31,10 @@ export const Education = () => {
                     <Card.Body className="cardBody">
                         <div>
                             <Card.Title className={name === "Tecnológico de Monterrey, Campus Guadalajara" ? "gradient-text-tec" : "gradient-text-tecmilenio"}>{name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">
+                            <Card.Subtitle as="p" className="mb-2 text-muted">
                                 {date}
                             </Card.Subtitle>
-                            <Card.Text>
+                            <Card.Text >
                                 {title}
                                 <br />
                                 {gpa}
