@@ -5,6 +5,6 @@ export const ApiRoute = (): string => {
     if (dev) {
         return "http://localhost:3000";
     } else {
-        return "https://armando-terrazas-gomez-6hhkz6bqz-armandotrsg.vercel.app";
+        return "https://armando-terrazas-gomez.vercel.app";
     }
 }
