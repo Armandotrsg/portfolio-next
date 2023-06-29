@@ -2,7 +2,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-import colorSharp from "../assets/img/color-sharp.png"
+import colorSharp from "../assets/img/color-sharp.webp"
 import Image from "next/image";
 
 export interface SkillCardProps {

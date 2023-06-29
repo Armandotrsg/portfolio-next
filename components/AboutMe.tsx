@@ -1,7 +1,7 @@
 "use client";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { Col, Container, Row } from "react-bootstrap";
-import colorSharp from "../assets/img/color-sharp2.png";
+import colorSharp from "../assets/img/color-sharp2.webp";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 

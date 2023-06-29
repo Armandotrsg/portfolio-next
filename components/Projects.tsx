@@ -3,7 +3,7 @@ import { Row, Col, Tab, Container, Nav } from "react-bootstrap";
 import { ProjectProps } from "@/app/api/projects/[projects]/route";
 import { useState } from "react";
 import Image from "next/image";
-import colorSharp2 from "../assets/img/color-sharp2.png";
+import colorSharp2 from "../assets/img/color-sharp2.webp";
 import { ProjectCard } from "./ProjectCard";
 
 interface ProjectsProps {
