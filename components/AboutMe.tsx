@@ -2,7 +2,7 @@
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { Col, Container, Row } from "react-bootstrap";
 import colorSharp from "../assets/img/color-sharp2.webp";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 interface AboutMeProps {
@@ -11,6 +11,7 @@ interface AboutMeProps {
 }
 
 export const AboutMe = ({ image, text }: AboutMeProps) => {
+  const router = useRouter();
   return (
     <>
       <header className="about">
@@ -39,7 +40,7 @@ export const AboutMe = ({ image, text }: AboutMeProps) => {
               <button
                 role="link"
                 className="vvd"
-                onClick={() => redirect("/connect")}
+                onClick={() => router.push("/connect")}
               >
                 Let&apos;s connect <ArrowRightCircle size={25} />{" "}
               </button>

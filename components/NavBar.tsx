@@ -11,6 +11,13 @@ import { resume } from "@/utils/Resume";
 export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  // Get window width
+  const Window = typeof window !== "undefined" && window;
+  if (Window) {
+    console.log(Window.innerWidth)
+  } else {
+    console.log("Window is undefined")
+  }
 
   useEffect(() => {
     const onScroll = () => {

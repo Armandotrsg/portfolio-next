@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import headerImg from "../assets/img/header-img.svg"
 
@@ -14,6 +14,7 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
     "software engineer",
     "web developer",
   ];
+  const router = useRouter();
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(
     225 - Math.random() * 100
@@ -78,7 +79,7 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
             <button
               role="link"
               className="vvd"
-              onClick={() => redirect("/connect")}
+              onClick={() => router.push("/connect")}
             >
               Let&apos;s connect <ArrowRightCircle size={25} />{" "}
             </button>
