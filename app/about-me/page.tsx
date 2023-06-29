@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 async function getAboutMe() {
   const res = await fetch(`${ApiRoute()}/api/about-me`, {
     next: {
-      revalidate: 10,
+      revalidate: 0,
     },
   });
   const profiles = await res.json();

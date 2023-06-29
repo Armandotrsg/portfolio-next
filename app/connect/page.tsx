@@ -11,7 +11,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function getProfiles() {
-    const res = await fetch(`${ApiRoute()}/api/profiles`);
+    const res = await fetch(`${ApiRoute()}/api/profiles`, {
+      next: {
+        revalidate: 0,
+      },
+    });
     const profiles = await res.json();
     return profiles;
 }
