@@ -261,20 +261,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 8rem 0 100px 0;
-  background-image: url('../assets/img/banner-bg.webp');
+  /* background-image: url('../assets/img/banner-bg.webp');
   background-position: top center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 @media screen and (min-width: 768px) {
   .banner {
     margin-top: 0;
     padding: 260px 0 100px 0;
-    background-image: url('../assets/img/banner-bg.webp');
+    /* background-image: url('../assets/img/banner-bg.webp');
     background-position: top center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
   }
 }
 
@@ -676,10 +676,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
-  background-image: url('../assets/img/footer-bg.webp');
+  /* background-image: url('../assets/img/footer-bg.webp');
   background-position: center center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -963,6 +963,9 @@ section.about {
   border-radius: 10px;
   box-shadow: -3px 2px 50px 3px rgba(219, 129, 241, 0.3);
 }
+
+.bg-image { position: absolute; inset: 0; }
+  .bg-image img { width: 100%; height: 100%; object-fit: cover; }
 
 /* * {
   border: 2px solid red;

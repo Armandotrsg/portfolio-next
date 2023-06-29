@@ -2,9 +2,10 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import headerImg from "../assets/img/header-img.svg"
+import headerImg from "../assets/img/header-img.svg";
+import herobg from "../assets/img/banner-bg.webp";
 
 export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
   const [loopNum, setLoopNum] = useState(0);
@@ -60,40 +61,45 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
   };
 
   return (
-    <header className="banner" id="home">
-      <Container>
-        <Row className="align-items-center">
-          <Col xs={12} md={7} xl={8}>
-            <span className="tagline">Hi There!</span>
-            <div className="fixed-height">
-              <h1>
-                I&apos;m Armando a{" "}
-                <span className="txt-rotate">
-                  <span className={isDeleting ? "writing" : "wrap"}>
-                    {text}
+    <div className="position-relative">
+      <div className="bg-image z-n1">
+        <Image
+          placeholder="blur"
+          src={herobg}
+          fill
+          alt="background footer image"
+        />
+      </div>
+      <header className="banner" id="home">
+        <Container>
+          <Row className="align-items-center">
+            <Col xs={12} md={7} xl={8}>
+              <span className="tagline">Hi There!</span>
+              <div className="fixed-height">
+                <h1>
+                  I&apos;m Armando a{" "}
+                  <span className="txt-rotate">
+                    <span className={isDeleting ? "writing" : "wrap"}>
+                      {text}
+                    </span>
                   </span>
-                </span>
-              </h1>
-            </div>
-            <p>{greetingMessage}</p>
-            <button
-              role="link"
-              className="vvd"
-              onClick={() => router.push("/connect")}
-            >
-              Let&apos;s connect <ArrowRightCircle size={25} />{" "}
-            </button>
-          </Col>
-          <Col xs={12} md={5} xl={4}>
-            <Image
-              src={headerImg}
-              width={500}
-              height={500}
-              alt="banner"
-            />
-          </Col>
-        </Row>
-      </Container>
-    </header>
+                </h1>
+              </div>
+              <p>{greetingMessage}</p>
+              <button
+                role="link"
+                className="vvd"
+                onClick={() => router.push("/connect")}
+              >
+                Let&apos;s connect <ArrowRightCircle size={25} />{" "}
+              </button>
+            </Col>
+            <Col xs={12} md={5} xl={4}>
+              <Image src={headerImg} width={500} height={500} alt="banner" />
+            </Col>
+          </Row>
+        </Container>
+      </header>
+    </div>
   );
 };
