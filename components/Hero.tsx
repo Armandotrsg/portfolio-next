@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/navigation'
 import Image from "next/image";
 import headerImg from "../assets/img/header-img.svg"
 

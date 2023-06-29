@@ -13,12 +13,10 @@ export const NavBar = () => {
   const pathname = usePathname();
   // Get window width
   const Window = typeof window !== "undefined" && window;
+  let innerWidth = 0;
   if (Window) {
-    console.log(Window.innerWidth)
-  } else {
-    console.log("Window is undefined")
+    innerWidth = window.innerWidth;
   }
-
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
@@ -51,7 +49,7 @@ export const NavBar = () => {
     <Navbar
       expand="lg"
       collapseOnSelect={true}
-      className={scrolled ? "scrolled" : ""}
+      className={scrolled || (innerWidth < 768 && innerWidth !== 0) ? "scrolled" : ""}
     >
       <Container>
         <NavbarBrand as={Link} href="/">

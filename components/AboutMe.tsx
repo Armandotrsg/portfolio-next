@@ -2,7 +2,7 @@
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { Col, Container, Row } from "react-bootstrap";
 import colorSharp from "../assets/img/color-sharp2.webp";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/navigation'
 import Image from "next/image";
 
 interface AboutMeProps {
