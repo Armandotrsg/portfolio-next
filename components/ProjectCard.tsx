@@ -4,7 +4,7 @@ import { ProjectProps } from "@/app/api/projects/[projects]/route";
 import Image from "next/image";
 
 export const ProjectCard = ({ name, description, image, url, dates }: ProjectProps) => {
-    if (typeof url !== 'undefined' || url !== "") {
+    if (url) {
         return (
             <Col sm={6} md={4}>
                 <div className="proj-imgbx">
