@@ -107,6 +107,7 @@ export const Projects = ({ProjectsInfo, Awards, Volunteerings}: ProjectsProps) =
         className="background-image-right"
         width={500}
         height={500}
+        placeholder="blur"
       />
     </section>
   );
