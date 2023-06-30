@@ -9,17 +9,12 @@ import { Logo } from "./Logo";
 import { resume } from "@/utils/Resume";
 
 export const NavBar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(window.innerWidth < 768);
   const pathname = usePathname();
-  // Get window width
-  const Window = typeof window !== "undefined" && window;
-  let innerWidth = 0;
-  if (Window) {
-    innerWidth = window.innerWidth;
-  }
+
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 50 || window.innerWidth < 768) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -49,7 +44,7 @@ export const NavBar = () => {
     <Navbar
       expand="lg"
       collapseOnSelect={true}
-      className={scrolled || (innerWidth < 768 && innerWidth !== 0) ? "scrolled" : ""}
+      className={scrolled ? "scrolled" : ""}
     >
       <Container>
         <NavbarBrand as={Link} href="/">
