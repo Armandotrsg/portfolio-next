@@ -9,21 +9,27 @@ import { Logo } from "./Logo";
 import { resume } from "@/utils/Resume";
 
 export const NavBar = () => {
-  const [scrolled, setScrolled] = useState(window.innerWidth < 768);
+  const [scrolled, setScrolled] = useState(false);
+  const [innerWidth, setInnerWidth] = useState(0);
   const pathname = usePathname();
 
   useEffect(() => {
+    const Window = typeof window !== "undefined" && window;
+    if (Window) {
+      setInnerWidth(Window.innerWidth);
+      setScrolled(Window.scrollY > 50 || innerWidth < 768);
+    }
     const onScroll = () => {
-      if (window.scrollY > 50 || window.innerWidth < 768) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      const Window = typeof window !== "undefined" && window;
+      if (Window) {
+        setInnerWidth(Window.innerWidth);
+        setScrolled(Window.scrollY > 50 || innerWidth < 768);
       }
     };
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [innerWidth]);
 
   const downloadResume = () => {
     let link = document.createElement("a");
