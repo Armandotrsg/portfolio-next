@@ -1,6 +1,9 @@
 "use client";
 import { useState, useRef, FormEvent } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
 import contactImg from "../assets/img/contact-img.svg";
 import emailjs from '@emailjs/browser';
 import Image from "next/image";

@@ -1,5 +1,9 @@
 "use client";
-import { Row, Col, Tab, Container, Nav } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Tab from "react-bootstrap/Tab";
+import Nav from "react-bootstrap/Nav";
 import { ProjectProps } from "@/app/api/projects/[projects]/route";
 import { useState } from "react";
 import Image from "next/image";

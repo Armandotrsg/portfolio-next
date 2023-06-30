@@ -1,5 +1,5 @@
 "use client";
-import { Col } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
 import { ProjectProps } from "@/app/api/projects/[projects]/route";
 import Image from "next/image";
 

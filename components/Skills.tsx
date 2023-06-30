@@ -1,5 +1,7 @@
 "use client";
-import { Col, Container, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import colorSharp from "../assets/img/color-sharp.webp"

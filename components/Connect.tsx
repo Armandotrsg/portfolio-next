@@ -1,7 +1,9 @@
 "use client";
-import { Col, Container, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 import colorSharp from "../assets/img/color-sharp2.webp";
-import { Card } from "react-bootstrap";
 import { Contact } from "./Contact";
 import Image from "next/image";
 

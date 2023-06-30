@@ -1,5 +1,7 @@
 "use client";
-import { Navbar, Container, Nav, NavbarBrand, NavLink } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { SocialNav } from "./SocialNav";
@@ -53,16 +55,16 @@ export const NavBar = () => {
       className={scrolled ? "scrolled" : ""}
     >
       <Container>
-        <NavbarBrand as={Link} href="/">
+        <Navbar.Brand as={Link} href="/">
           <Logo className="imgLogo" />
-        </NavbarBrand>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <NavbarCollapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {navLinks.map((link) => (
-              <NavLink
+              <Nav.Link
                 as={Link}
                 href={link.href}
                 className={
@@ -71,7 +73,7 @@ export const NavBar = () => {
                 key={link.id}
               >
                 {link.text}
-              </NavLink>
+              </Nav.Link>
             ))}
           </Nav>
           <span className="navbar-text">
