@@ -85,7 +85,7 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
             </button>
           </Col>
           <Col xs={12} md={5} xl={4}>
-            <Image src={headerImg} width={500} height={500} alt="banner" />
+            <Image loading="eager" src={headerImg} width={500} height={500} alt="banner" />
           </Col>
         </Row>
       </Container>
