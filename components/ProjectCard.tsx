@@ -20,7 +20,7 @@ export const ProjectCard = ({ name, description, image, url, dates }: ProjectPro
                     <Image src={image} alt={name} className="projectCard-Img" width={519} height={380} />
                     <a href={url} target="_blank" rel="noreferrer">
                         <div className="proj-txtx">
-                            <h5>{name}</h5>
+                            <strong>{name}</strong>
                             <span>{description}<br />{handleDate(dates.start, dates.end)}</span>
                         </div>
                     </a>
