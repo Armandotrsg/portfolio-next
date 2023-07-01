@@ -824,6 +824,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   justify-content: center;
 }
 
+.education h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .education .gradient-text-tec {
   /* Fallback: Set a background color. */
   background-color: red;

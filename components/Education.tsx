@@ -2,14 +2,7 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from 'react-bootstrap/Card';
-
-interface EduCardProps {
-  name: string;
-  date: string;
-  gpa: string;
-  title: string;
-}
+import { EduCard, EduCardProps } from "./EduCard";
 
 export const Education = () => {
   const edu: EduCardProps[] = [
@@ -26,36 +19,6 @@ export const Education = () => {
       title: "High School Diploma",
     },
   ];
-
-  const EduCard = ({ name, date, gpa, title }: EduCardProps) => {
-    return (
-      <Col xs={12} md={6} xl={4}>
-        <Card className="educationCard">
-          <Card.Body className="cardBody">
-            <div>
-              <Card.Title
-                className={
-                  name === "Tecnológico de Monterrey, Campus Guadalajara"
-                    ? "gradient-text-tec"
-                    : "gradient-text-tecmilenio"
-                }
-              >
-                {name}
-              </Card.Title>
-              <Card.Subtitle as="p" className="mb-2 text-muted">
-                {date}
-              </Card.Subtitle>
-              <Card.Text>
-                {title}
-                <br />
-                {gpa}
-              </Card.Text>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-    );
-  };
 
   return (
     <section className="education" id="education">
