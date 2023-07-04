@@ -25,9 +25,10 @@ export const Connect = ({ profiles }: { profiles: ProfileProps[] }) => {
                 <Card.Img
                   as={Image}
                   variant="top"
+                  alt={name}
                   src={img}
                   width={70}
-                    height={100}
+                  height={100}
                   className={name === "LinkedIn" ? "linkedinImg" : "profileImg"}
                 />
                 <Card.Title className="gradient-text my-3">
@@ -69,6 +70,7 @@ export const Connect = ({ profiles }: { profiles: ProfileProps[] }) => {
             width={500}
             height={500}
             placeholder="blur"
+            loading='eager'
           />
         </Container>
       </section>

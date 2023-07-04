@@ -35,6 +35,7 @@ export const AboutMe = ({ image, text }: AboutMeProps) => {
                 className="img-fluid mb-5 aboutImg"
                 width={500}
                 height={500}
+                loading='eager'
               />
             </Col>
             <Col xs={12} md={6}>
