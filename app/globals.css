@@ -936,6 +936,11 @@ section.connect {
   color: #fff;
 }
 
+.profileCard h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .connect .cardBody {
   display: flex;
   flex-direction: row;

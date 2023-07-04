@@ -31,8 +31,8 @@ export const Connect = ({ profiles }: { profiles: ProfileProps[] }) => {
                   height={100}
                   className={name === "LinkedIn" ? "linkedinImg" : "profileImg"}
                 />
-                <Card.Title className="gradient-text my-3">
-                  <h5>{name}</h5>
+                <Card.Title className="my-3">
+                  <h2>{name}</h2>
                 </Card.Title>
                 <Card.Text>
                   <strong>{user}</strong>
