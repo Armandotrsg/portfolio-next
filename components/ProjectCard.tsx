@@ -33,7 +33,7 @@ export const ProjectCard = ({ name, description, image, url, dates }: ProjectPro
                 <div className="proj-imgbx">
                     <Image src={image} alt={name} className="projectCard-Img" width={519} height={380} />
                     <div className="proj-txtx">
-                        <h4>{name}</h4>
+                        <strong>{name}</strong>
                         <span>{description}<br />{handleDate(dates.start, dates.end)}</span>
                     </div>
                 </div>
