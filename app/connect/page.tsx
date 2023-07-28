@@ -5,8 +5,8 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `Let's Connect | Armando's Portfolio`,
-    description: `Connect with Armando Terrazas`,
+    title: `Connect with Armando Terrazas Gómez | Web and iOS Developer`,
+    description: `Connect with Armando Terrazas Gómez, a web and iOS developer who creates stunning apps and websites. See his contact and social media info.`,
   };
 }
 

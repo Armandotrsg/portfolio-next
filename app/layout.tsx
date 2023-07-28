@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 
 export const metadata = {
-  title: "Armando's Portfolio",
-  description: "Armando Terrazas's Portfolio Website",
+  title: "Armando Terrazas Gómez: Web and iOS Developer | Portfolio and Skills",
+  description: "Welcome to my portfolio. I'm Armando Terrazas, a web and iOS developer who showcases my projects and skills. See my work and connect with me",
 };
 
 export default function RootLayout({
