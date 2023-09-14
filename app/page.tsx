@@ -5,7 +5,7 @@ import { Education } from "@/components/Education";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Experience } from "@/components/Experience";
-import { ExperienceProps } from "./api/experience/route";
+import getExperience from "@/utils/Experience";
 
 export const revalidate = 20;
 
@@ -19,12 +19,6 @@ async function getProjects(path: "projects" | "social-service" | "awards") {
   const res = await fetch(`${ApiRoute()}/api/projects/${path}`);
   const projects = await res.json();
   return projects;
-}
-
-async function getExperience() {
-  const res = await fetch(`${ApiRoute()}/api/experience`);
-  const experience = await res.json();
-  return experience;
 }
 
 export default async function Home() {
@@ -41,23 +35,30 @@ export default async function Home() {
   const projectsData = getProjects("projects");
   const socialServiceData = getProjects("social-service");
   const awardsData = getProjects("awards");
-  // const experienceData = getExperience();
-  // const [skills, projects, socialService, awards, experience] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData, experienceData]);
-  const [skills, projects, socialService, awards] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData]);
-  const experience: ExperienceProps[] = [
-    {
-      company: 'Tecnológico de Monterrey',
-      position: 'On Campus Intern',
-      brief: 'Collaborated in a scrum environment where I implemented web applications using PHP, jQuery and React',
-      dates: { start: 'August 2023', end: 'undefined' }
-    }
-  ]
+  const experienceData = getExperience();
+  const [skills, projects, socialService, awards, experience] =
+    await Promise.all([
+      skillsData,
+      projectsData,
+      socialServiceData,
+      awardsData,
+      experienceData,
+    ]);
+  // const [skills, projects, socialService, awards] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData]);
+  // const experience: ExperienceProps[] = [
+  //   {
+  //     company: 'Tecnológico de Monterrey',
+  //     position: 'On Campus Intern',
+  //     brief: 'Collaborated in a scrum environment where I implemented web applications using PHP, jQuery and React',
+  //     dates: { start: 'August 2023', end: 'undefined' }
+  //   }
+  // ]
   return (
     <>
       <Hero greetingMessage={greetingMessages[randomIndex]} />
       <Skills skills={skills as SkillCardProps[]} />
       <Education />
-      <Experience experience={experience}/>
+      <Experience experience={experience} />
       <Projects
         {...{
           ProjectsInfo: projects,
