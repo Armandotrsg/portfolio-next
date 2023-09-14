@@ -37,7 +37,7 @@ export const Skills = ({skills}: {skills: SkillCardProps[]}) => {
         return(
             <div className="item">
                 <figure>
-                    <Image src={img} alt={name} width={300} height={300} />
+                    <Image src={img} alt={`Logo of ${name}`} width={300} height={300} />
                     <figcaption>{name}</figcaption>
                 </figure>
             </div>
