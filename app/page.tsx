@@ -5,6 +5,7 @@ import { Education } from "@/components/Education";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Experience } from "@/components/Experience";
+import { ExperienceProps } from "./api/experience/route";
 
 export const revalidate = 20;
 
@@ -18,6 +19,12 @@ async function getProjects(path: "projects" | "social-service" | "awards") {
   const res = await fetch(`${ApiRoute()}/api/projects/${path}`);
   const projects = await res.json();
   return projects;
+}
+
+async function getExperience() {
+  const res = await fetch(`${ApiRoute()}/api/experience`);
+  const experience = await res.json();
+  return experience;
 }
 
 export default async function Home() {
@@ -34,13 +41,14 @@ export default async function Home() {
   const projectsData = getProjects("projects");
   const socialServiceData = getProjects("social-service");
   const awardsData = getProjects("awards");
-  const [skills, projects, socialService, awards] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData]);
+  const experienceData = getExperience();
+  const [skills, projects, socialService, awards, experience] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData, experienceData]);
   return (
     <>
       <Hero greetingMessage={greetingMessages[randomIndex]} />
       <Skills skills={skills as SkillCardProps[]} />
       <Education />
-      <Experience />
+      <Experience experience={experience as ExperienceProps[]}/>
       <Projects
         {...{
           ProjectsInfo: projects,
