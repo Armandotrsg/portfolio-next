@@ -41,14 +41,23 @@ export default async function Home() {
   const projectsData = getProjects("projects");
   const socialServiceData = getProjects("social-service");
   const awardsData = getProjects("awards");
-  const experienceData = getExperience();
-  const [skills, projects, socialService, awards, experience] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData, experienceData]);
+  // const experienceData = getExperience();
+  // const [skills, projects, socialService, awards, experience] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData, experienceData]);
+  const [skills, projects, socialService, awards] = await Promise.all([skillsData, projectsData, socialServiceData, awardsData]);
+  const experience: ExperienceProps[] = [
+    {
+      company: 'Tecnológico de Monterrey',
+      position: 'On Campus Intern',
+      brief: 'Collaborated in a scrum environment where I implemented web applications using PHP, jQuery and React',
+      dates: { start: 'August 2023', end: 'undefined' }
+    }
+  ]
   return (
     <>
       <Hero greetingMessage={greetingMessages[randomIndex]} />
       <Skills skills={skills as SkillCardProps[]} />
       <Education />
-      <Experience experience={experience as ExperienceProps[]}/>
+      <Experience experience={experience}/>
       <Projects
         {...{
           ProjectsInfo: projects,
