@@ -45,6 +45,5 @@ export async function GET() {
     // Sort by dates.start in descending order
     return dateB.getTime() - dateA.getTime();
   });
-  console.log(experience);  
   return NextResponse.json(experience);
 }
