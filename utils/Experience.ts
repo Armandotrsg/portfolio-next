@@ -1,9 +1,19 @@
 import { db } from "@/firebaseConfig";
 import { collection, getDocs, DocumentData } from "firebase/firestore";
-import { NextResponse } from "next/server";
-import { ExperienceProps } from "@/utils/Experience";
 
-export async function GET() {
+interface Dates {
+  start: string;
+  end?: string;
+}
+
+export interface ExperienceProps {
+  company: string;
+  position: string;
+  brief: string;
+  dates: Dates;
+}
+
+export default async function getExperience(): Promise<ExperienceProps[]>{
   const querySnapshot = await getDocs(collection(db, "experience"));
   const experience: ExperienceProps[] = [];
   querySnapshot.forEach((doc) => {
@@ -34,5 +44,5 @@ export async function GET() {
     // Sort by dates.start in descending order
     return dateB.getTime() - dateA.getTime();
   });
-  return NextResponse.json(experience);
+  return experience;
 }

@@ -8,10 +8,9 @@ import {
 } from "react-vertical-timeline-component";
 import handleDate from "@/utils/HandleDates";
 import "react-vertical-timeline-component/style.min.css";
-import { ExperienceProps } from "@/app/api/experience/route";
+import { ExperienceProps } from "@/utils/Experience";
 
 export const Experience = ({experience} : {experience: ExperienceProps[]}) => {
-
   return (
     <>
       <section className="education mt-5 skill">
