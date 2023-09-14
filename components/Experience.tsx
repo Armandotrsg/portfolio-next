@@ -6,32 +6,11 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import handleDate from "@/utils/HandleDates";
 import "react-vertical-timeline-component/style.min.css";
+import { ExperienceProps } from "@/app/api/experience/route";
 
-export const Experience = () => {
-  const experience = [
-    {
-      title: "Software Engineer",
-      company: "ABC Company",
-      date: "2021 - Present",
-      description:
-        "Developed and maintained web applications using React and Node.js",
-    },
-    {
-      title: "Intern",
-      company: "XYZ Company",
-      date: "2020 - 2021",
-      description:
-        "Assisted in developing mobile applications using React Native",
-    },
-    {
-      title: "Freelance Developer",
-      company: "Self-Employed",
-      date: "2019 - Present",
-      description:
-        "Developed custom websites and web applications for clients using React and Node.js",
-    },
-  ];
+export const Experience = ({experience} : {experience: ExperienceProps[]}) => {
 
   return (
     <>
@@ -55,7 +34,7 @@ export const Experience = () => {
                       boxShadow: " 0px 0px 30px 1px rgba(47, 128, 237, 0.3)",
                     }}
                     contentArrowStyle={{ borderRight: "7px solid  #151515" }}
-                    date={exp.date}
+                    date={handleDate(exp.dates.start, exp.dates.end)}
                     iconStyle={{
                       background: "#151515",
                       border: "2px solid #000",
@@ -67,7 +46,7 @@ export const Experience = () => {
                       }}
                       className="gradient-text-tec"
                     >
-                      {exp.title}
+                      {exp.company}
                     </h2>
                     <h3
                       style={{
@@ -75,9 +54,9 @@ export const Experience = () => {
                       }}
                       className="vertical-timeline-element-subtitle"
                     >
-                      {exp.company}
+                      {exp.position}
                     </h3>
-                    <p>{exp.description}</p>
+                    <p>{exp.brief}</p>
                   </VerticalTimelineElement>
                 );
               })}
