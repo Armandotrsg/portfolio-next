@@ -64,8 +64,7 @@ export const Contact = () => {
                             <Row>
                                 {inputs.map((input) => (
                                     <Col sm={6} className="px-1" key={input.name}>
-                                        <label className="sr-only" htmlFor={input.name}>{input.name}</label>
-                                        <input type={input.type} name={input.name} placeholder={`${input.placeholder}${input.required ? "*" : ""}`} required={input.required} />
+                                        <input type={input.type} name={input.name} placeholder={`${input.placeholder}${input.required ? "*" : ""}`} required={input.required} aria-label={input.placeholder} />
                                     </Col>
                                 ))}
                                 <Col>
