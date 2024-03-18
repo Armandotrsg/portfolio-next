@@ -17,14 +17,14 @@ interface InputProps {
     type: string;
     name: string;
     placeholder: string;
-    required?: boolean;
+    required: boolean;
 }
 
 const inputs: InputProps[] = [
     { type: "text", name: "user_firstName", placeholder: "First Name", required: true },
     { type: "text", name: "user_lastName", placeholder: "Last Name", required: true },
     { type: "email", name: "user_email", placeholder: "Email Address", required: true },
-    { type: "text", name: "user_phone", placeholder: "Phone Number" },
+    { type: "text", name: "user_phone", placeholder: "Phone Number", required: false },
 ];
 
 export const Contact = () => {
@@ -68,7 +68,7 @@ export const Contact = () => {
                                     </Col>
                                 ))}
                                 <Col>
-                                    <textarea name="message" rows={6} placeholder="Message*" required />
+                                    <textarea name="message" rows={6} placeholder="Message*" required aria-label="Message" />
                                     <button type="submit"><span>{buttonText}</span></button>
                                     {
                                         status.message &&
