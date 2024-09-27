@@ -12,7 +12,7 @@ export const Hero = ({ greetingMessage }: { greetingMessage: string }) => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = [
-    "6th semester student",
+    "7th semester student",
     "software engineer",
     "web developer",
   ];
